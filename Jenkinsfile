@@ -3,15 +3,15 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "hemashree897/nginx-sample"
-        DOCKER_CREDENTIALS_ID = "docker-hub-credentials"   // Jenkins credentials for Docker Hub
-        EC2_CREDENTIALS_ID = "ec2-ssh-credentials"         // Jenkins SSH key for EC2
-        EC2_HOST = "ec2-user@54.91.239.194"           // Replace with your EC2 instance's public IP
+        DOCKER_CREDENTIALS_ID = "docker-hub-credentials"   
+        EC2_CREDENTIALS_ID = "ec2-ssh-credentials"        
+        EC2_HOST = "ec2-user@54.91.239.194"           
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Hemashree6/nginx-sample.git'
+                git branch: 'main', url: 'https://github.com/Hemashree6/nginx-sample.git'
             }
         }
 
