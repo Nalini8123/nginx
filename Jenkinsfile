@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Hemashree6/CI.git'
+                git 'https://github.com/Hemashree6/nginx-sample.git'
             }
         }
 
