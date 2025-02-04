@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "your-dockerhub-username/nginx-sample"
+        DOCKER_IMAGE = "hemashree897/nginx-sample"
         DOCKER_CREDENTIALS_ID = "docker-hub-credentials"   // Jenkins credentials for Docker Hub
         EC2_CREDENTIALS_ID = "ec2-ssh-credentials"         // Jenkins SSH key for EC2
-        EC2_HOST = "ec2-user@your-ec2-public-ip"           // Replace with your EC2 instance's public IP
+        EC2_HOST = "ec2-user@54.91.239.194"           // Replace with your EC2 instance's public IP
     }
 
     stages {
