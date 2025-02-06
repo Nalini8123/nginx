@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "hemashree897/nginx-sample"
         DOCKER_CREDENTIALS_ID = "docker-hub-credentials"   
         EC2_CREDENTIALS_ID = "ec2-ssh-credentials"        
-        EC2_HOST = "ec2-user@98.81.2.151"           
+        EC2_HOST = "ec2-user@3.81.50.38"           
     }
 
     stages {
