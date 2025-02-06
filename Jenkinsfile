@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "hemashree897/nginx-sample"
-        DOCKER_CREDENTIALS_ID = "docker-hub-credentials"   
-        EC2_CREDENTIALS_ID = "ec2-ssh-credentials"        
-        EC2_HOST = "ec2-user@3.81.50.38"           
+        DOCKER_IMAGE = "nalini8123//nginx-sample"
+        DOCKER_CREDENTIALS_ID = "Nali-ID"   
+        EC2_CREDENTIALS_ID = "SSH-ID"        
+        EC2_HOST = "ubuntu@13.202.44.38"           
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/Hemashree6/nginx-sample.git'
+                git branch: 'main', url: 'https://github.com/Nalini8123/nginx.git'
             }
         }
 
