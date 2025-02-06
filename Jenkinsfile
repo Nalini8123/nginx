@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "nalini8123//nginx-sample"
+        DOCKER_IMAGE = "nalini8123/nginx-sample"
         DOCKER_CREDENTIALS_ID = "Nali-ID"   
         EC2_CREDENTIALS_ID = "SSH-ID"        
         EC2_HOST = "ubuntu@13.202.44.38"           
