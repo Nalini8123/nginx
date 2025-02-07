@@ -4,8 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE = "nalini8123/nginx-sample"
         DOCKER_CREDENTIALS_ID = "Nali-ID"   
-        EC2_CREDENTIALS_ID = "SSH-ID"        
-        EC2_HOST = "ubuntu@13.202.44.38"           
+        UBUNTU_CREDENTIALS_ID = "SSH-ID"        
+        UBUNTU_HOST = "ubuntu@13.202.44.38"           
     }
 
     stages {
@@ -26,18 +26,18 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
+                    docker.withRegistry('https://index.docker.io/v1/', "${UBUNTU_CREDENTIALS_ID}") {
                         docker.image("${DOCKER_IMAGE}:latest").push()
                     }
                 }
             }
         }
 
-        stage('Deploy to EC2') {
+        stage('Deploy to ubuntu') {
             steps {
-                sshagent (credentials: ["${EC2_CREDENTIALS_ID}"]) {
+                sshagent (credentials: ["${UBUNTU_CREDENTIALS_ID}"]) {
                     sh """
-                        ssh -o StrictHostKeyChecking=no ${EC2_HOST} '
+                        ssh -o StrictHostKeyChecking=no ${UBUNTU_HOST} '
                         docker pull ${DOCKER_IMAGE}:latest &&
                         docker stop nginx-sample || true &&
                         docker rm nginx-sample || true &&
@@ -51,7 +51,7 @@ pipeline {
 
     post {
         success {
-            echo 'NGINX app successfully deployed on EC2!'
+            echo 'NGINX app successfully deployed on Ubuntu!'
         }
         failure {
             echo 'Deployment failed. Check the logs for errors.'
