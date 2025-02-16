@@ -5,7 +5,7 @@ pipeline {
         DOCKER_IMAGE = "nalini8123/nginx-sample"
         DOCKER_CREDENTIALS_ID = "Nali-ID"   
         UBUNTU_CREDENTIALS_ID = "SSH-ID"        
-        UBUNTU_HOST = "ubuntu@13.202.44.38"           
+        UBUNTU_HOST = "ubuntu@13.202.44.124"           
     }
 
     stages {
