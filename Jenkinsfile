@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "nalini8123/nginx-sample"
-        DOCKER_CREDENTIALS_ID = "Nali-ID"   
-        UBUNTU_CREDENTIALS_ID = "SSH-ID"        
+        DOCKER_CREDENTIALS_ID = "Nali-ID1"   
+        UBUNTU_CREDENTIALS_ID = "SSH-ID1"        
         UBUNTU_HOST = "ubuntu@13.202.44.124"           
     }
 
