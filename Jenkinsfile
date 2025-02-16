@@ -26,7 +26,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', "${UBUNTU_CREDENTIALS_ID}") {
+                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
                         docker.image("${DOCKER_IMAGE}:latest").push()
                     }
                 }
